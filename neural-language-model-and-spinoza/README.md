@@ -14,33 +14,31 @@
   <a href="#pp"> Preprocessing </a> 
 </p>
 
+
+In this project I will show how to build a language model for text generation using deep learning techniques. For more details on this topic and several others [Ref.1](https://machinelearningmastery.com/). 
+
 <a id = 'intro'></a>
-
-
-
-In this project I will show how to build a language model for text generation using deep learning techniques. For more details on this topic and several others click [here](https://machinelearningmastery.com/). 
-
-
 ## Introduction
 
-Though natural language, in principle, have formal structures and grammar, in practice it is full of ambiguities. Modeling it using examples and modeling is an interesting alternative.  The definition of a (statistical) language model given by [Ref.1](https://en.wikipedia.org/wiki/Language_model) is:
+Though natural language, in principle, have formal structures and grammar, in practice it is full of ambiguities. Modeling it using examples and modeling is an interesting alternative.  The definition of a (statistical) language model given by [Ref.2](https://en.wikipedia.org/wiki/Language_model) is:
 
 > A statistical language model is a probability distribution over sequences of words. Given such a sequence it assigns a probability to the whole sequence.
 
-Or equivalently, given a sequence `{w_i}` of length m, the model assigns a probability 
+Or equivalently, given a sequence of words of length m, the model assigns a probability 
 
 <p align="center">
   <img src="images/probw1w2.png", width="150",height="200">
 </p> 
 
-to the whole sequence. In particular, a neural language model can predict the probability of the next word in a sentence (see [Ref.2](https://machinelearningmastery.com/develop-character-based-neural-language-model-keras/) for more details). 
+to the whole sequence. In particular, a neural language model can predict the probability of the next word in a sentence (see [Ref.3](https://machinelearningmastery.com/develop-character-based-neural-language-model-keras/) for more details). 
 
 The use of neural networks has become one of the main approaches to language modeling. Three properties can describe this neural language modeling (NLM) approach succinctly [Ref. 3](http://www.jmlr.org/papers/v3/bengio03a.html): 
 
 > We first associate words in the vocabulary with a distributed word feature vector, then express the joint probability function of word sequences in terms of the feature vectors of these words in the sequence and then learn simultaneously the word feature vector and the parameters of the probability function. 
 
-In this project I used Spinoza's *Ethics* to build a NLM.
+In this project I used Spinoza's Ethics (*Ethica, ordine geometrico demonstrata*) to build a NLM.
 
+<a id = 'ethics'></a>
 ## *The Ethics*
 
 From [Ref.4](https://en.wikipedia.org/wiki/Ethics_(Spinoza)):
@@ -54,7 +52,7 @@ The article goes on to say that:
 The book has structure shown below. We see that it is set out in geometrical form paralleling the "canonical example of a rigorous structure of argument producing unquestionable results: the example being the geometry of Euclid" (see [link](https://timlshort.com/2010/06/21/spinozas-style-of-argument-in-ethics-i/)).
 
 > # PART I. CONCERNING GOD. 
-## DEFINITIONS.
+> DEFINITIONS.
 I. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
 
 > II. A thing is called finite after its kind, when it can be limited by another thing of the same nature; for instance, a body is called finite because we always conceive another greater body. So, also, a thought is limited by another thought, but a body is not limited by thought, nor a thought by body.
