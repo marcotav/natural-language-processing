@@ -26,4 +26,4 @@ The use of neural networks has become one of the main approaches to language mod
 
 > We first associate words in the vocabulary with a distributed word feature vector, then express the joint probability function of word sequences in terms of the feature vectors of these words in the sequence and then learn simultaneously the word feature vector and the parameters of the probability function.
 
-In this project I used Spinoza's Ethics (Ethica, ordine geometrico demonstrata) to build a NLM.
+In this project I used Spinoza's Ethics (*Ethica, ordine geometrico demonstrata*) to build a NLM.
