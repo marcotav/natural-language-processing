@@ -1,6 +1,6 @@
 # Neural Language Model and Spinoza's *Ethics*
 
-![image title](https://img.shields.io/badge/work-in%20progress-blue.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/keras-v2.1.5-red.svg) ![Image title](https://img.shields.io/badge/TensorFlow-v1.7.0-orange.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/numpy-1.14.2-green.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg)
+![image title](https://img.shields.io/badge/work-in%20progress-blue.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/keras-v2.1.5-red.svg) ![Image title](https://img.shields.io/badge/TensorFlow-v1.7.0-orange.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/numpy-1.14.2-green.svg)
                    
                    
 <p align="center">
@@ -10,8 +10,11 @@
 <p align="center">
   <a href="#intro">Introduction </a> •
   <a href="#ethics"> The Ethics </a> •
-  <a href="#load"> Loading the text </a>  •
-  <a href="#pp"> Preprocessing </a> 
+  <a href="#imports"> Imports </a>  •
+  <a href="#loading"> Loading Text </a> •
+  <a href="#pp"> Preprocessing </a> •
+  <a href="#tr"> Training </a> •
+  <a href="#model"> Model </a> •
 </p>
 
 
@@ -53,55 +56,40 @@ The book has structure shown below. We see that it is set out in geometrical for
 
 > # PART I. CONCERNING GOD. 
 > DEFINITIONS.
-I. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
-
+> I. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
 > II. A thing is called finite after its kind, when it can be limited by another thing of the same nature; for instance, a body is called finite because we always conceive another greater body. So, also, a thought is limited by another thought, but a body is not limited by thought, nor a thought by body.
-
 > III. By substance, I mean that which is in itself, and is conceived through itself: in other words, that of which a conception can be formed independently of any other conception.
-
 > IV. By attribute, I mean that which the intellect perceives as constituting the essence of substance.”
 
-
+<a id = 'imports'></a>
 ### Imports
 
-from numpy import array
-from pickle import dump
-from keras.utils import to_categorical
-from keras.utils.vis_utils import plot_model
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
+The following libraries were imported:
+```
+numpy 
+pickle 
+keras
+pandas
+nltk
+```
 
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all" 
+<a id = 'loading'></a>
+### Loading Text
 
-### We first write a function to load texts
-
-The steps of the function below are:
+We first write a function to load texts. The steps of the function below are:
 - Opens the file 'ethics.txt'
 - Reads it into a string
 - Closes it
 
-file = "ethics.txt"
-
+```
 def load_txt(file):
     f = open(file, 'r')
     text = f.read()
     f.close()
     return text
+```
 
-### Priting out part of the string
-
-We see it contains lots of new line characters.
-
-load_txt(file)[0:100]
-
-### Loading and splitting the string
-
-raw = load_txt('ethics.txt')
-
-raw[0:100]
-
+<a id = 'pp'></a>
 ## Preprocessing
 
 The first step is tokenization. With the tokens we will be able to train our model. Some other actions are:
@@ -113,16 +101,9 @@ The first step is tokenization. With the tokens we will be able to train our mod
 - Dropping non-alphabetic words
 - Stemming
 
+The following functions accomplished these steps:
 
-
-
-import nltk
-# nltk.download('stopwords')
-  
-from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-import string
-
+```
 def cleaner(text):
     stemmer = PorterStemmer()
     stop = stopwords.words('english') 
@@ -133,37 +114,24 @@ def cleaner(text):
     tokens = [word for word in tokens if word.isalpha()]
     tokens = [word.lower() for word in tokens]
     return tokens
+```
 
-print(cleaner(raw)[0:100])
-
+We then join tokens to build `raw` after cleaning:
+```
 tokens = cleaner(raw)
-#raw.split()
-print(tokens[0:10])
-
-### Joining tokens to build `raw` after cleaning
-
 raw = ' '.join(tokens)
-raw[0:56]
+```
 
-### Building sequences
+The next step is building sequences of n words (I chose n=20) and saving it:
 
+```
 n = 20
 sequences = list()
 for i in range(n, len(raw)):
     sequences.append(raw[i-n:i+1])
-
-### Checking size
-
-There are around 180,000 sequences to be used for training.
-
-len(sequences)
-
-print('first sequence is:',sequences[0])
-print('second sequence is:',sequences[1])
-print('third sequence is:',sequences[2])
-
-### Saving our prepared sequences
-
+```
+The following function saves the prepared sequences:
+```
 def save_txt(sequences, file):
     f = open(file, 'w')
     f.write('\n'.join(sequences))
@@ -171,67 +139,47 @@ def save_txt(sequences, file):
 
 out = 'ethics_sequences.txt';
 save_txt(sequences, out)
+```
 
-## Training the model
+<a id = 'tr'></a>
+## Training
 
-### Loading the sequences and checking for mistakes
+We loading the sequences and encode them as integers:
 
+```
 raw = load_txt('ethics_sequences.txt')
 seqs = raw.split('\n')
-print('first sequence is:',seqs[0])
-print('second sequence is:',seqs[1])
-print('third sequence is:',seqs[2])
-seqs[0:10]
-
-### Encoding
-
-We must now encode the sequences as a chain of integers. The list `unique_chars` is made of unique characters:
-
 unique_chars = sorted(list(set(raw)))
-unique_chars[0:10]
-
 char_int_map = dict((a, b) for b, a in enumerate(unique_chars))
-print('The values corresponding to keys:\n')
-print(unique_chars)
-print('are:\n')
-print(char_int_map)
-
-### Process sequences using the dictionary
 
 encoded_sequences = list()
 for seq in seqs:
     encoded_sequences.append([char_int_map[char] for char in seq])
+```
 
-### Printing out sequences and their encoded form
+Printing out sequences and their encoded form
 
-print(sequences[0])
-print(encoded_sequences[0])
-print(sequences[1])
-print(encoded_sequences[1])
+```
+part i concerning god
+[17, 2, 19, 21, 1, 10, 1, 4, 16, 15, 4, 6, 19, 15, 10, 15, 8, 1, 8, 16, 5]
+art i concerning god 
+[2, 19, 21, 1, 10, 1, 4, 16, 15, 4, 6, 19, 15, 10, 15, 8, 1, 8, 16, 5, 1]
+```
 
-### Building an array from the encoded sequences
+Next we build an array from the encoded sequences, define our `X` and `y`, perform hot encoding
 
+```
 encoded_sequences = array(encoded_sequences)
-
-encoded_sequences
-
 X,y = encoded_sequences[:,:-1], encoded_sequences[:,-1]
-
-### Hot encoding
-
 sequences = [to_categorical(x, num_classes=len(char_int_map)) for x in X]
-
-sequences[0]
-
-### Features and targets
-
 X = array(sequences)
 y = to_categorical(y, num_classes=len(char_int_map))
+```
 
+<a id = 'model'></a>
 ### Model
 
-size = len(char_int_map)
-
+```
 def define_model(X):
     model = Sequential()
     model.add(LSTM(75, input_shape=(X.shape[1], X.shape[2])))
@@ -241,34 +189,20 @@ def define_model(X):
     return model
 
 model = define_model(X)
+```
 
-### Fitting and saving model and dictionary
+We fit it and save it:
 
+```
 history = model.fit(X, y, epochs=30, verbose=2)
-
 loss = history.history['loss']
-
-import matplotlib.pyplot as plt
-import numpy as np
-%matplotlib inline
-
-fig = plt.figure()
-plt.plot(loss)
-plt.title('Model Loss')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-#pylab.xlim([0,60])
-fig.savefig('loss.png')
-plt.show();
-
 model.save('model.h5')
-
 dump(char_int_map, open('char_int_map.pkl', 'wb'))
-
-type(model)
+```
 
 ## Generating sequences
 
+```
 from pickle import load
 from numpy import array
 from keras.models import load_model
@@ -293,25 +227,16 @@ def gen_seq(model, char_int_map, n_seq, test_seq, size_gen):
         # append to input
         txt += int_to_char
     return txt
+```
 
 ### Loading the model and the dictionary
 
-# load the model
-model = load_model('model.h5')
-# load the mapping
-char_int_map = load(open('char_int_map.pkl', 'rb'))
-
-# test start of rhyme
+Testing the model:
+```
 print(gen_seq(model, char_int_map, 20, 'that which is self caused', 40))
 print(gen_seq(model, char_int_map, 20, 'nature for instance a body', 40))
-
-raw[0:400]
-
-### Correct
-
-    1) "that which is self caused i mean that of which the essence"
-    2) "nature for instance a body is called finite because we always conceive"
+```
 
 ### Conclusion
 
-The model has to learn better probably by increasing the number of epochs.
+To be finished
