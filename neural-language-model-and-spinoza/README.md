@@ -54,11 +54,16 @@ The article goes on to say that:
 
 The book has structure shown below. We see that it is set out in geometrical form paralleling the "canonical example of a rigorous structure of argument producing unquestionable results: the example being the geometry of Euclid" (see [link](https://timlshort.com/2010/06/21/spinozas-style-of-argument-in-ethics-i/)).
 
-> # PART I. CONCERNING GOD. 
+> # PART I. CONCERNING GOD.
+
 > DEFINITIONS.
+
 > I. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
+
 > II. A thing is called finite after its kind, when it can be limited by another thing of the same nature; for instance, a body is called finite because we always conceive another greater body. So, also, a thought is limited by another thought, but a body is not limited by thought, nor a thought by body.
+
 > III. By substance, I mean that which is in itself, and is conceived through itself: in other words, that of which a conception can be formed independently of any other conception.
+
 > IV. By attribute, I mean that which the intellect perceives as constituting the essence of substance.”
 
 <a id = 'imports'></a>
@@ -239,4 +244,4 @@ print(gen_seq(model, char_int_map, 20, 'nature for instance a body', 40))
 
 ### Conclusion
 
-To be finished
+To be finished.
