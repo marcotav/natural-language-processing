@@ -5,7 +5,8 @@
 
 <p align="center">
   <a href="#what"> What is Sentiment Analysis </a> •
-  <a href="#lib"> Libraries </a> •
+  <a href="#goal"> Goal </a> •
+  <a href="#imp"> Importing libraries and the data </a> •
   <a href="#pro"> Problem domain </a> •
   <a href="#cle"> Cleaning the text </a> •
   <a href="#docmatrix"> Document-term matrix </a> •
@@ -24,6 +25,7 @@ Another, more business oriented, [definition](https://www.paralleldots.com/senti
 
 > [The goal of sentiment analysis is to] understand the social sentiment of your brand, product or service while monitoring online conversations. Sentiment Analysis is contextual mining of text which identifies and extracts subjective information in source material.
 
+<a id = 'goal'></a>
 ## Goal
 
 In this project we will perform a kind of "reverse sentiment analysis" on a dataset consisting of movie review from [Rotten Tomatoes](https://www.rottentomatoes.com/). The dataset already contains the classification, which can be positive or negative, and the task at hand is to identify which words appear more frequently on reviews from each of the classes.
@@ -37,23 +39,33 @@ Furthermore,
 > If `x_i` is a boolean expressing the occurrence or absence of the i-th term from the vocabulary, then the likelihood of a document given a class `C_k` is given by:
 
 <p align="center">
-  <img src="images/BNB.jpg", width="300",height="400">
+  <img src="https://github.com/marcotav/natural-language-processing/blob/master/sentiment-analysis/images/BNB.png", width="400">
 </p>  
 
-where $p_{{ki}}$ is the probability that a review $k$ belonging to class $C_{k}$ contains the term $x_{i}$. The classification $C_{1}$ is either 0 or 1 (negative or positive). In other words, the Bernoulli NB will tell us which words are more likely to appear *given that* the review is "fresh" versus or given that it is "rotten".
+where `p_{ki}` is the probability that a review k belonging to class `C_k` contains the term `x_i`. The classification is either 0 or 1 (negative or positive). In other words, the Bernoulli NB will tell us which words are more likely to appear *given that* the review is "fresh" versus or given that it is "rotten".
 
+<a id = 'imp'></a>
 ## Importing libraries and the data
 
-import pandas as pd
-import numpy as np
+We need:
+```
+pandas 
+numpy
+```
+and from `sklearn`:
+```
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.cross_validation import cross_val_score, train_test_split
-
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all" # so we can see the value of multiple statements at once.
-
+```
+The dataset is imported as usual:
+```
 rotten = pd.read_csv('rt_critics.csv')
-rotten.head()
+```
+
+A sample of the `rotten` is:
+
+
+
 
 The columns `fresh` contains three classes, namely, "fresh", "rotten" and "none". The third one needs to be removed which can be done using the Python method `isin( )` which returns a boolean `DataFrame` showing whether each element in the `DataFrame` is contained in values.
 
