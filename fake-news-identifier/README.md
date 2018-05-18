@@ -1,28 +1,135 @@
-## Fake News Classification [[view code]](http://nbviewer.jupyter.org/github/marcotav/machine-learning-regression-models/blob/master/retail/notebooks/retail-recommendations.ipynb) 
+## Topic identification for a fake news Identifier [[view code]](http://nbviewer.jupyter.org/github/marcotav/machine-learning-regression-models/blob/master/retail/notebooks/retail-recommendations.ipynb) 
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg) ![Image title](https://img.shields.io/badge/gensim-0.3.4-blue.svg)
 
 **The code is available [here](http://nbviewer.jupyter.org/github/marcotav/machine-learning-regression-models/blob/master/retail/notebooks/retail-recommendations.ipynb) or by clicking on the [view code] link above.**
 
 This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
 
-
 <br>
 
 <p align="center">
-  <img src="images/liquor.jpeg">
+  <img src="images/wordvec.png">
 </p>        
 <br>
 
 <p align="center">
   <a href="#summary"> Summary </a> •
-  <a href="#pre"> Preamble </a> •
-  <a href="#data"> Getting data </a> •
-  <a href="#munge_eda"> Data Munging and EDA </a> •
-  <a href="#mine"> Mining the data </a> •
-  <a href="#models"> Building the models </a> •
-  <a href="#plots"> Plotting results </a> •
-  <a href="#conc"> Conclusions and recommendations</a> 
 </p>
 
+This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
+
 <a id = 'summary'></a>
-## Summary
+## Basic Concepts
+
+Before analyzing our fake news dataset, I will quickly describe a few important concepts that will be used.
+
+### Word Vectors
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Word_embedding):
+
+> Word embedding is the collective name for a set of language modeling and feature learning techniques in natural language processing (NLP) where words or phrases from the vocabulary are mapped to vectors of real numbers.
+
+Word vectors are multi-dimensional representation of word which allows one to obtain relationships between words. These relationships are obtained by NLP algorithms based on how the words are used throughout a text corpus. An example is the difference between word vectors. [The difference is similar](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python) between words such as man and women and kind and queen.
+
+
+### `Gensim` dictionary class and corpus
+
+This can be best explained with an example. Consider the list `quotes` containing quotes from the Chinese philosopher and writer [Lao Tzu](https://en.wikipedia.org/wiki/Laozi):
+- `word_tokenize ` tokenizes the strings `quotes` (after converting tokens to lowercases and dropping stopwords)
+- The `Dictionary` class creates a mapping with an id for each token which can be seen using `token2id`. 
+- A `Gensim` corpus transforms a document into a bag-of-words using the tokens ids and also their frequency in the document. The corpus is a list of sublists, each sublist corresponding to one document
+
+Since we will be counting tokens I introduced some extra repeated words in the quotes!
+
+```
+quotes = ['When I let go of what I am am, I become become become what what I might be',
+          'Mastering others is strength strength strength. Mastering Mastering Mastering Mastering Mastering\
+          yourself yourself yourself yourself is true power',
+          'When you are content content content to be simply yourself and do not compare or compete, everybody will respect you',
+          'Great acts are made up of small deeds deeds deeds deeds',
+          'An ant on the move does more than a dozing dozing dozing dozing ox',
+          'Anticipate Anticipate Anticipate Anticipate the difficult by managing the easy',
+          'Nature does not hurry, yet everything everything everything everything is accomplished accomplished accomplished',
+          'To see things in the seed, that is genius genius genius genius genius genius']
+
+tokenized_quotes = [word_tokenize(quote.lower()) for quote in quotes] 
+
+from stop_words import get_stop_words
+en_stop_words = get_stop_words('en')
+tokenized_quotes_stopped = []
+for token_lst in tokenized_quotes:
+    tokenized_quotes_stopped.append([i for i in token_lst if not i in en_stop_words if len(i) > 4])
+dictionary = Dictionary(tokenized_quotes_stopped) 
+corpus = [dictionary.doc2bow(doc) for doc in tokenized_quotes_stopped]
+```
+
+In the corpus above consider the first and second lists corresponding to the first and second quotes:
+
+    corpus[0] -> [(0, 3), (1, 1)]
+    corpus[1] -> [(2, 6), (3, 1), (4, 1), (5, 3)]
+
+These tuples represent:
+
+    (token id from the dictionary, token frequency in the quote)
+
+The third tuple (2, 6) of corpus[1] e.g. says that the token 'mastering' with id = 2 (which can be obtained using `.get( )`) from the dictionary appeared six times in corpus[1]. 
+
+### Most common terms
+
+To obtain the most common terms in the second quote (and across all quotes) we can proceed as follows. First we sort the tuples in `corpus[1]` by frequency. Note the syntax here. The key defines the sorting criterion which is the function:
+
+    w[x] = element of w with index x
+    
+This function is implemented using **lambda**. 
+
+```
+quote = corpus[1]
+quote = sorted(quote, key=lambda w: w[1], reverse=True)
+```
+
+Using `dictionary.get(word_id)` we find the words corresponding to the id `word_id` in the dictionary. The `for` below identifies the frequency each term appears in the first quote of the corpus:
+
+```
+for word_id, word_count in quote[:3]:
+    print(word_id,'|', word_count,'|',dictionary.get(word_id),'|', word_count)
+```
+
+We now create an empty dictionary using `defaultdict` to include a total word count:
+
+```
+from collections import defaultdict
+total_word_count = defaultdict(int)
+```
+
+We will also need `itertools.chain.from_iterable`. From the docs:
+
+> Make an iterator that returns elements from the first iterable until it is exhausted, then proceeds to the next iterable, until all of the iterables are exhausted. Used for treating consecutive sequences as a single sequence. 
+
+An example:
+
+```
+import itertools
+import operator
+i=0
+for word_id, word_count in itertools.chain.from_iterable(corpus[0:3]):
+    print('(word_id, word_count) from quote {}:'.format(i),(word_id, word_count))
+    i +=1
+```
+
+So `itertools.chain.from_iterable` joins all tuples.
+
+Using a `for` loop we use create a word_id entry in the empty dictionary and for each of the words corresponding to these id we sum all its occurrences in the corpus:
+
+```
+total_word_count = defaultdict(int)
+for word_id, word_count in itertools.chain.from_iterable(corpus):
+    total_word_count[word_id] += word_count
+sorted_word_count = sorted(total_word_count.items(), key=lambda w: w[1], reverse=True) 
+```
+
+We end up with the number of times each word appears in the full corpus:
+
+for word_id, word_count in sorted_word_count[:5]:
+    print('Frequency of the term'+' "'+dictionary.get(word_id)+'"'+' is:', word_count)
+    
+```
