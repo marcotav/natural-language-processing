@@ -1,7 +1,7 @@
-## Topic identification for a fake news Identifier [[view code]](http://nbviewer.jupyter.org/github/marcotav/machine-learning-regression-models/blob/master/retail/notebooks/retail-recommendations.ipynb) 
+## Topic identification for a fake news Identifier [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/fake-news-identifier/notebooks/fake-news-identifier.ipynb) 
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg) ![Image title](https://img.shields.io/badge/gensim-0.3.4-blue.svg)
 
-**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/machine-learning-regression-models/blob/master/retail/notebooks/retail-recommendations.ipynb) or by clicking on the [view code] link above.**
+**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/fake-news-identifier/notebooks/fake-news-identifier.ipynb) or by clicking on the [view code] link above.**
 
 This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
 
