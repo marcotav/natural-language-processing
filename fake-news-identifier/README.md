@@ -9,7 +9,8 @@ This project was originally from [here](https://www.datacamp.com/courses/natural
 
 <p align="center">
   <a href="#summary"> Summary </a> •
-  <a href="#wc"> Word Vectors </a>
+  <a href="#wv"> Word Vectors </a> •
+  <a href="#gensim"> Gensim dictionary class and corpus </a>
 </p>
 
 This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
@@ -28,7 +29,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Word_embedding):
 
 Word vectors are multi-dimensional representation of word which allows one to obtain relationships between words. These relationships are obtained by NLP algorithms based on how the words are used throughout a text corpus. An example is the difference between word vectors. [The difference is similar](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python) between words such as man and women and kind and queen.
 
-
+<a id = 'gensim'></a>
 ### `Gensim` dictionary class and corpus
 
 This can be best explained with an example. Consider the list `quotes` containing quotes from the Chinese philosopher and writer [Lao Tzu](https://en.wikipedia.org/wiki/Laozi):
