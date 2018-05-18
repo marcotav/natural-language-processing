@@ -1,7 +1,6 @@
-## Towards an Alphabet of Human Thought  [[view code]](http://nbviewer.jupyter.org/github/marcotav/machine-learning-classification-projects/blob/master/predicting-number-of-comments-on-reddit-using-random-forest-classifier/notebooks/project-3-marco-tavora.ipynb) 
+## Towards an Alphabet of Human Thought
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/BeautifulSoup-4.6.0-blue.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/numpy-1.14.2-green.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg)
 
-**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/machine-learning-classification-projects/blob/master/predicting-number-of-comments-on-reddit-using-random-forest-classifier/notebooks/project-3-marco-tavora.ipynb) or by clicking on the [view code] link above.**
 
 
 <br>
@@ -14,8 +13,7 @@
 
 <p align="center">
   <a href="#d"> Definition </a> •
-  <a href="#pm"> Personal Motivation </a> •
-  <a href="#bird"> Bird's eye view of Natural Language Processing techniques  </a> 
+  <a href="#pm"> Personal Motivation </a> 
 </p>
 
 <a id = 'd'></a>
@@ -36,16 +34,13 @@ Leibniz project included:
 I am fascinated by the idea of systematizing and analyzing massive stores of human knowledge to build a hierarchical classification. My interest in the topic is far from recent and started when I first came into contact with Aristotle's [Porphyrian tree](https://en.wikipedia.org/wiki/Porphyrian_tree) and Leibniz's writings on knowledge systematization and formalization (his *characteristica universalis*). I am fascinated by his idea of constructing an overarching architecture to make human knowledge computational. 
 
 This is an utterly overwhelming project so I decided to start from the basic of natural language processing methods. I will start covering:
-- [Sentence Structure]()
+- [Sentence Structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/notebooks/sentence-structure/sentence-structure.ipynb)
 - Grammars
 - Meaning of Sentences
 
 The rest of the steps will be defined as I move on.
 
-<a id = 'bird'></a>
-## Sentence Structure
 
-This is convered in this [notebook](http://nbviewer.jupyter.org/github/marcotav/machine-learning-classification-projects/blob/master/predicting-number-of-comments-on-reddit-using-random-forest-classifier/notebooks/project-3-marco-tavora.ipynb).
 
 
 
