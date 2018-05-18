@@ -8,21 +8,18 @@ This project was originally from [here](https://www.datacamp.com/courses/natural
 <br>
 
 <p align="center">
-  <img src="images/wordvec.png">
-</p>        
-<br>
-
-<p align="center">
   <a href="#summary"> Summary </a> •
+  <a href="#wc"> Word Vectors </a>
 </p>
 
 This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
 
 <a id = 'summary'></a>
-## Basic Concepts
+### Basic Concepts
 
 Before analyzing our fake news dataset, I will quickly describe a few important concepts that will be used.
 
+<a id = 'wv'></a>
 ### Word Vectors
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Word_embedding):
