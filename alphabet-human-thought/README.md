@@ -33,8 +33,7 @@ Leibniz project included:
 I am fascinated by the idea of systematizing and analyzing massive stores of human knowledge to build a hierarchical classification. My interest in the topic is far from recent and started when I first came into contact with Aristotle's [Porphyrian tree](https://en.wikipedia.org/wiki/Porphyrian_tree) and Leibniz's writings on knowledge systematization and formalization (his *characteristica universalis*). I am fascinated by his idea of constructing an overarching architecture to make human knowledge computational. 
 
 This is an utterly overwhelming project so I decided to start from the basic of natural language processing methods. I will start covering:
-- [Sentence Structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/notebooks/sentence-structure/sentence-structure.ipynb)
-- Grammars
+- [Sentence Structure and Grammars](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/notebooks/sentence-structure/sentence-structure.ipynb)
 - Meaning of Sentences
 
 The rest of the steps will be defined as I move on.
