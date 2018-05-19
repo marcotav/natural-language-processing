@@ -1,16 +1,19 @@
-## Towards an Alphabet of Human Thought ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg)
+## Towards an Alphabet of Human Thought 
+![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg)
 
 <br>
 <br>
 <p align="center">
   <img src="images/leibniz.jpg" 
-       width="150">
+       width="200">
 </p>
 <br>
 
 <p align="center">
   <a href="#d"> Definition </a> •
-  <a href="#pm"> Personal Motivation </a> 
+  <a href="#pm"> Personal Motivation </a>  •
+  <a href="#nd"> Notebooks and descriptions </a> •
+  <a href="#ci"> Contact Information </a> 
 </p>
 
 <a id = 'd'></a>
@@ -35,13 +38,18 @@ I am fascinated by the idea of systematizing and analyzing massive stores of hum
 </p>
 
 
+<a id = 'nd'></a>
+## Notebooks and descriptions
+
+
 | Notebook | Brief Description |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [meaning-of-sentences](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) | In this notebook, it will be shown that using logic formalisms one can find more generic translation mechanisms (in progress)  |
 | [sentence-structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/notebooks/sentence-structure.ipynb) | We will show how to develop formal models for patterns in sequence of words using grammars and parsers (in progress)|
 
+<a id = 'ci'></a>
+## Contact Information
 
-## contact-information
 
 Feel free to contact me:
 
