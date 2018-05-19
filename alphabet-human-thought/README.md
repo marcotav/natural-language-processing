@@ -31,7 +31,7 @@ Leibniz project included:
 I am fascinated by the idea of systematizing and analyzing massive stores of human knowledge to build a hierarchical classification. My interest in the topic is far from recent and started when I first came into contact with Aristotle's [Porphyrian tree](https://en.wikipedia.org/wiki/Porphyrian_tree) and Leibniz's writings on knowledge systematization and formalization (his *characteristica universalis*). I am fascinated by his idea of constructing an overarching architecture to make human knowledge computational. 
 
 <p align="center">
-<img src="natural-language-processing/images/linguistics-and-reality-640x300.png" width="350"/>   
+<img src="https://github.com/marcotav/natural-language-processing/blob/master/images/linguistics-and-reality-640x300.png" width="350"/>   
 </p>
 
 
