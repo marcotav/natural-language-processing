@@ -12,10 +12,17 @@
 </p> 
 
 <p align="center">
+  <a href="#d"> Notebooks and descriptions </a> •
+  <a href="#ci"> Contact Information </a>  •
+  <a href="#nd"> Notebooks and descriptions </a> •
+  <a href="#ci"> Contact Information </a> 
+</p>
+
+<p align="center">
 <img src="https://github.com/marcotav/natural-language-processing/blob/master/sentiment-analysis/images/sanalysis.jpg" width="350"/>   
 </p>
 
-
+<a id = 'nd'></a>
 ## Notebooks and descriptions
 
 
@@ -27,10 +34,10 @@
 | [alphabet-human-thought/meaning-of-sentences](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) | In this notebook, it will be shown that using logic formalisms one can find more generic translation mechanisms (in progress)  |
 | [alphabet-human-thought/sentence-structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/notebooks/sentence-structure.ipynb) | We will show how to develop formal models for patterns in sequence of words using grammars and parsers (in progress)|
 
+<a id = 'ci'></a>
+## Contact Information
 
-## contact-information
-
-Feel free to contact me to discuss any issues, questions, or comments.
+Feel free to contact me:
 
 * Email: [marcotav65@gmail.com](mailto:marcotav65@gmail.com)
 * GitHub: [marcotav](https://github.com/marcotav)
