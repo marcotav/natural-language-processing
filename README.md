@@ -15,6 +15,10 @@
 <img src="https://github.com/marcotav/natural-language-processing/blob/master/sentiment-analysis/images/sanalysis.jpg" width="350"/>   
 </p>
 
+
+## Notebooks and descriptions
+
+
 | Notebook | Brief Description |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [neural-language-model-and-spinoza](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/notebooks/language-model-spinoza-new.ipynb) | Spinoza's Ethics is used to build a language model for text generation with recurrent neural nets.|
