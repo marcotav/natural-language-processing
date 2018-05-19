@@ -32,7 +32,7 @@ Using Natural Language Processing (NLP) in a nutshell is a technique that:
 Feel free to contact me to discuss any issues, questions, or comments.
 
 * Email: [marcotav65@gmail.com](mailto:marcotav65@gmail.com)
-* GitHub: [donnemartin](https://github.com/marcotav)
-* LinkedIn: [marcotavora](https://www.linkedin.com/in/marco-tavora)
+* GitHub: [marcotav](https://github.com/marcotav)
+* LinkedIn: [marco-tavora](https://www.linkedin.com/in/marco-tavora)
 * Website: [marcotavora.me](http://www.marcotavora.me)
 
