@@ -1,8 +1,12 @@
-# Neural Language Model and Spinoza's *Ethics*
-
+## Neural Language Model and Spinoza's *Ethics* [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/notebooks/language-model-spinoza-new.ipynb)
 ![image title](https://img.shields.io/badge/work-in%20progress-blue.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/keras-v2.1.5-red.svg) ![Image title](https://img.shields.io/badge/TensorFlow-v1.7.0-orange.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/pandas-0.22.0-red.svg) ![Image title](https://img.shields.io/badge/numpy-1.14.2-green.svg)
+
+**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/notebooks/language-model-spinoza-new.ipynb) or by clicking on the [view code] link above.**
+
+
+
                    
-                   
+             
 <p align="center">
   <img src="images/Spinoza.jpg", width="300",height="400">
 </p>        
