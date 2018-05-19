@@ -35,12 +35,6 @@ I am fascinated by the idea of systematizing and analyzing massive stores of hum
 </p>
 
 
-<p align="center">
-<img src="https://github.com/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/images/Spinoza.jpg" width="350"/>   
-</p> 
-
-
-
 | Notebook | Brief Description |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [meaning-of-sentences](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) | In this notebook, it will be shown that using logic formalisms one can find more generic translation mechanisms (in progress)  |
@@ -49,7 +43,7 @@ I am fascinated by the idea of systematizing and analyzing massive stores of hum
 
 ## contact-information
 
-Feel free to contact me to discuss any issues, questions, or comments.
+Feel free to contact me:
 
 * Email: [marcotav65@gmail.com](mailto:marcotav65@gmail.com)
 * GitHub: [marcotav](https://github.com/marcotav)
