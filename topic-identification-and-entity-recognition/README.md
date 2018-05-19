@@ -1,17 +1,12 @@
-## Topic Identification and Entity Recognition [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/topic-identification-and-entity-recognition/notebooks/topic-identification-and-entity-recognition.ipynb) 
+## Topic Identification and Entity Recognition [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/topic-identification-and-entity-recognition/topic-identification/notebooks/topic-identification.ipynb) 
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/gensim-0.3.4-blue.svg)
 
-**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/topic-identification-and-entity-recognition/notebooks/topic-identification-and-entity-recognition.ipynb) or by clicking on the [view code] link above.**
+**The code is available [here](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/topic-identification-and-entity-recognition/topic-identification/notebooks/topic-identification.ipynb) or by clicking on the [view code] link above.**
 
 <p align="center">
   <a href="#wv"> Word Vectors </a> •
   <a href="#gen"> Gensim dictionary class and corpus </a> •
-  <a href="#pro"> Problem domain </a> •
-  <a href="#cle"> Cleaning the text </a> •
-  <a href="#docmatrix"> Document-term matrix </a> •
-  <a href="#model"> LDA model </a>  •
-  <a href="#pyLDAvis"> pyLDAvis </a>  •
-  <a href="#results"> Results </a> 
+  <a href="#mct"> Most common terms </a> 
 </p>
 
 This project was originally from [here](https://www.datacamp.com/courses/natural-language-processing-fundamentals-in-python).
@@ -80,6 +75,7 @@ These tuples represent:
 
 The third tuple (2, 6) of corpus[1] e.g. says that the token 'mastering' with id = 2 (which can be obtained using `.get( )`) from the dictionary appeared six times in corpus[1]. 
 
+<a id = 'mct'></a>
 ### Most common terms
 
 To obtain the most common terms in the second quote (and across all quotes) we can proceed as follows. First we sort the tuples in `corpus[1]` by frequency. Note the syntax here. The key defines the sorting criterion which is the function:
