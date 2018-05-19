@@ -1,4 +1,4 @@
-## NLP: Sentence Structure [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/sentence-structure.ipynb) 
+## Sentence Structure [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/sentence-structure.ipynb) 
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![Image title](https://img.shields.io/badge/gensim-0.3.4-blue.svg)
 
 
