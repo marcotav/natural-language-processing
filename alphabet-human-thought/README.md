@@ -1,7 +1,5 @@
 ## Towards an Alphabet of Human Thought ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) ![Image title](https://img.shields.io/badge/sklearn-0.19.1-orange.svg) ![Image title](https://img.shields.io/badge/matplotlib-v2.1.2-orange.svg)
 
-
-
 <br>
 <br>
 <p align="center">
@@ -38,7 +36,33 @@ This is an utterly overwhelming project so I decided to start from the basic of 
 
 The rest of the steps will be defined as I move on.
 
+<p align="center">
+<img src="images/linguistics-and-reality-640x300.png" width="350"/>   
+</p>
 
 
+<p align="center">
+<img src="https://github.com/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/images/Spinoza.jpg" width="350"/>   
+</p> 
+
+<p align="center">
+<img src="https://github.com/marcotav/natural-language-processing/blob/master/sentiment-analysis/images/sanalysis.jpg" width="350"/>   
+</p>
+
+| Notebook | Brief Description |
+|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+| [meaning-of-sentences](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) | In this notebook, it will be shown that using logic formalisms one can find more generic translation mechanisms (in progress)  |
+| [sentence-structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/notebooks/sentence-structure.ipynb) | We will show how to develop formal models for patterns in sequence of words using grammars and parsers (in progress)|
+
+
+## contact-information
+
+Feel free to contact me to discuss any issues, questions, or comments.
+
+* Email: [marcotav65@gmail.com](mailto:marcotav65@gmail.com)
+* GitHub: [marcotav](https://github.com/marcotav)
+* LinkedIn: [marco-tavora](https://www.linkedin.com/in/marco-tavora)
+* Website: [marcotavora.me](http://www.marcotavora.me)
 
 
