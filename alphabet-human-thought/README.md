@@ -30,12 +30,6 @@ Leibniz project included:
 
 I am fascinated by the idea of systematizing and analyzing massive stores of human knowledge to build a hierarchical classification. My interest in the topic is far from recent and started when I first came into contact with Aristotle's [Porphyrian tree](https://en.wikipedia.org/wiki/Porphyrian_tree) and Leibniz's writings on knowledge systematization and formalization (his *characteristica universalis*). I am fascinated by his idea of constructing an overarching architecture to make human knowledge computational. 
 
-This is an utterly overwhelming project so I decided to start from the basic of natural language processing methods. I will start covering:
-- [Sentence Structure and Grammars](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/notebooks/sentence-structure/sentence-structure.ipynb)
-- Meaning of Sentences
-
-The rest of the steps will be defined as I move on.
-
 <p align="center">
 <img src="images/linguistics-and-reality-640x300.png" width="350"/>   
 </p>
@@ -45,13 +39,10 @@ The rest of the steps will be defined as I move on.
 <img src="https://github.com/marcotav/natural-language-processing/blob/master/neural-language-model-and-spinoza/images/Spinoza.jpg" width="350"/>   
 </p> 
 
-<p align="center">
-<img src="https://github.com/marcotav/natural-language-processing/blob/master/sentiment-analysis/images/sanalysis.jpg" width="350"/>   
-</p>
+
 
 | Notebook | Brief Description |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
 | [meaning-of-sentences](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) | In this notebook, it will be shown that using logic formalisms one can find more generic translation mechanisms (in progress)  |
 | [sentence-structure](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/sentence-structure/notebooks/sentence-structure.ipynb) | We will show how to develop formal models for patterns in sequence of words using grammars and parsers (in progress)|
 
