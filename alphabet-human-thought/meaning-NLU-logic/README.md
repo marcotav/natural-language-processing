@@ -1,4 +1,4 @@
-## Meaning of Sentences, NLU and Logic [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) 
+## Meaning of Sentences, Natural Language Understanding (NLU) and Logic [[view code]](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) 
 ![image title](https://img.shields.io/badge/python-v3.6-green.svg) ![image title](https://img.shields.io/badge/ntlk-v3.2.5-yellow.svg) 
 
 **The code is available [here](http://nbviewer.jupyter.org/github/marcotav/natural-language-processing/blob/master/alphabet-human-thought/meaning-NLU-logic/notebooks/meaning-of-sentences.ipynb) or by clicking on the [view code] link above.**
