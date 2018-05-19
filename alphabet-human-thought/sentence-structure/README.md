@@ -64,3 +64,51 @@ A graph of the tree structure can be found [here](https://github.com/marcotav/al
 - In the second the elephant was shot with a gunby a shooter using pajamas.
 
 **We see that by identifying the structure of the sentences, the meaning becomes more easily identifiable.**
+
+### Context-Free Grammar (CFG)
+
+Consider the example:
+```
+grammar1 = nltk.CFG.fromstring("""
+  S -> NP VP
+  VP -> V NP | V NP PP
+  PP -> P NP
+  V -> "saw" | "ate" | "walked"
+  NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+  Det -> "a" | "an" | "the" | "my"
+  N -> "man" | "dog" | "cat" | "telescope" | "park"
+  P -> "in" | "on" | "by" | "with"
+  """)
+```
+
+
+A `RecursiveDescentParser` used below is
+> A simple top-down CFG parser that parses texts by recursively expanding the fringe of a Tree, 
+and matching it against a text.
+
+```
+sentence = "the dog saw a man in a park".split()
+rd_parser = nltk.RecursiveDescentParser(grammar1)
+for tree in rd_parser.parse(sentence):
+    print(tree)
+```
+
+The output is:
+```
+(S
+  (NP (Det the) (N dog))
+  (VP (V saw) (NP (Det a) (N man) (PP (P in) (NP (Det a) (N park))))))
+(S
+  (NP (Det the) (N dog))
+  (VP (V saw) (NP (Det a) (N man)) (PP (P in) (NP (Det a) (N park)))))
+
+```
+T sentence "the dog saw a man in a park" using the grammar above given origin to two trees because of its ambiguous structure, in this case, preposicional phrase attachment ambiguity. In the first tree, the seeing occurred in the park. In this case, NP is "the dog" and the seeing act refers to it.
+
+     [the dog] [saw a man in the park]
+
+In the second, the man was in the park but the dog could be outside, looking at the park. In this case, the first of the right branch is "a man in the park". So the sentence is:
+
+     [the dog saw][a man in a park]
+     
+## TBC
